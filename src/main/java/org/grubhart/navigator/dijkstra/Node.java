@@ -16,8 +16,14 @@ public class Node {
     }
 
     public void addAdjacentNode(AdjacentNode adjacentNode) {
-
         adjacentNodes.add(adjacentNode);
+    }
 
+    public Integer getDistanceToNextNode(){
+        return adjacentNodes.get(0).getDistance();
+    }
+
+    public List<AdjacentNode> getAdjacentNodes() {
+        return adjacentNodes;
     }
 }
