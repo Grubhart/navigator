@@ -19,11 +19,31 @@ public class Node {
         adjacentNodes.add(adjacentNode);
     }
 
-    public Integer getDistanceToNextNode(){
-        return adjacentNodes.get(0).getDistance();
+
+
+    public String getName() {
+        return name;
     }
 
-    public List<AdjacentNode> getAdjacentNodes() {
-        return adjacentNodes;
+    public AdjacentNode getNearestNode(){
+
+        Integer distance=0;
+        AdjacentNode nearestAdjacentNode=null;
+        for (AdjacentNode node: adjacentNodes) {
+
+            if(distance.equals(0)) {
+                nearestAdjacentNode=node;
+                distance=nearestAdjacentNode.getDistance();
+            }else {
+                if(distance>node.getDistance()){
+                    nearestAdjacentNode=node;
+                    distance=nearestAdjacentNode.getDistance();
+                }
+            }
+
+        }
+
+        return nearestAdjacentNode;
+
     }
 }

@@ -6,7 +6,7 @@ import java.util.List;
 public class Dijkstra {
 
     private List<Node> nodes;
-    private List<Node> finalNodes;
+    private List<AdjacentNode> finalNodes;
     
 
     public void init(List<Node> nodes) {
@@ -17,19 +17,33 @@ public class Dijkstra {
 
     public void process() {
 
-        finalNodes=nodes.subList(0,nodes.size());
+
+        String lastNode=nodes.get(0).getName();
+        for (Node node: nodes) {
+
+            if(lastNode.equals(node.getName())) {
+                AdjacentNode adjacentNode = node.getNearestNode();
+                if (adjacentNode != null) {
+                    finalNodes.add(adjacentNode);
+                    lastNode=adjacentNode.getName();
+                }
+            }
+        }
+
+
 
     }
+
 
 
     public Integer getDistance() {
 
         Integer distance=0;
 
-        for (Node node: finalNodes) {
+        for (AdjacentNode node: finalNodes) {
 
-            if(!node.getAdjacentNodes().isEmpty())
-                distance+=node.getDistanceToNextNode();
+
+                distance+=node.getDistance();
 
         }
 

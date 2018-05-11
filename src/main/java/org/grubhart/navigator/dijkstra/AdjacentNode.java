@@ -12,4 +12,5 @@ public class AdjacentNode extends Node{
     public Integer getDistance() {
         return distance;
     }
+
 }
