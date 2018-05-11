@@ -17,7 +17,6 @@ public class Dijkstra {
 
     public void process() {
 
-
         String lastNode=nodes.get(0).getName();
         for (Node node: nodes) {
 
@@ -37,16 +36,13 @@ public class Dijkstra {
 
 
     public Integer getDistance() {
-
         Integer distance=0;
 
         for (AdjacentNode node: finalNodes) {
 
-
                 distance+=node.getDistance();
 
         }
-
         return distance;
     }
 

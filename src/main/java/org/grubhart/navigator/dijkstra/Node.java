@@ -31,19 +31,14 @@ public class Node {
         AdjacentNode nearestAdjacentNode=null;
         for (AdjacentNode node: adjacentNodes) {
 
-            if(distance.equals(0)) {
+            if(distance.equals(0) || distance>node.getDistance() ) {
                 nearestAdjacentNode=node;
                 distance=nearestAdjacentNode.getDistance();
-            }else {
-                if(distance>node.getDistance()){
-                    nearestAdjacentNode=node;
-                    distance=nearestAdjacentNode.getDistance();
-                }
             }
-
         }
 
         return nearestAdjacentNode;
 
     }
+
 }

@@ -8,7 +8,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 
-public class testDijkstra {
+public class testDijkstraProcess {
 
     @Test
     public void testInitVector(){
@@ -143,6 +143,8 @@ public class testDijkstra {
         assertEquals((Integer) 5,dijkstra.getDistance());
 
     }
+
+
 
 
 
