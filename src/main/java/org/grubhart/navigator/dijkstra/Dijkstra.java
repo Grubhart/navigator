@@ -46,4 +46,16 @@ public class Dijkstra {
         return distance;
     }
 
+    public String getRoute() {
+
+        StringBuilder route=  new StringBuilder(nodes.get(0).getName());
+
+        for (AdjacentNode node: finalNodes) {
+
+            route.append(node.getName());
+
+        }
+        return route.toString();
+
+    }
 }
